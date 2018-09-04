@@ -671,8 +671,7 @@ class Zone(object):
         gslbs = []
         for gslb_svc in response['data']:
             del gslb_svc['zone']
-            del gslb_svc['fqdn']
-            gslbs.append(GSLB(self._name, self._fqdn, api=False, **gslb_svc))
+            gslbs.append(GSLB(self._name, api=False, **gslb_svc))
         return gslbs
 
     def get_all_rdns(self):
